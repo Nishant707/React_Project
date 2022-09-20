@@ -11,6 +11,7 @@ function App() {
   const [shownPatient, setShownPatient] = useState(false);
   const [showWardRoom, setShowWardRoom] = useState(false);
   const [showIPDDetails, setDetails] = useState(false);
+  const [showReports,setReport]=useState(false);
 
   const handleDetails = () => {
     setShownPatient(false);
@@ -41,6 +42,15 @@ function App() {
     setShownPatient((current) => !current);
   };
 
+  const handleReport=()=>{
+    setshownStaff(false);
+    setShowWardRoom(false);
+    setDetails(false);
+    setShownPatient(false);
+setReport(c=>!c);
+
+  }
+
   return (
     <div className="app">
       <button onClick={handleStaff}>Staff</button>
@@ -48,6 +58,8 @@ function App() {
       <button onClick={handlePatient}>Patient</button>
       <button onClick={handleWardRoom}>Ward/Room</button>
       <button onClick={handleDetails}>IPD Patient Details</button>
+      <button onClick={handleReport}>Reports</button>
+
       <div>
         {shownStaff && <StaffComponent />}
 
@@ -56,7 +68,7 @@ function App() {
         {showWardRoom && <ShowRoomWardComponent />}
 
         {showIPDDetails && <IPDPatientsList />}
-        <Reports/>
+        {showReports && <Reports/>}
       </div>
     </div>
   );
