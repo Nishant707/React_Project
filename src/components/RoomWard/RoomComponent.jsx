@@ -1,9 +1,8 @@
 import { useState } from "react";
 
-
 const RoomComponent=()=>{
 
-    const [data,setData]=useState([{RoomId:null,Name:"",IsAvailable:'',charge:null,WardId:null}]);
+    const [data,setData]=useState({'RoomId':null,'Name':"",'IsAvailable':true,'Charge':null,'WardId':null});
 
    
   async function handleAddRoom(event){
@@ -33,25 +32,41 @@ const RoomComponent=()=>{
         <form>
         <div className='control-group'>
           <div className='form-control'>
-            <label htmlFor='wardId'>WardId</label>
-            <input type='number' id='wardId' onChange={(e)=>setData({...data,WardId:parseInt(e.target.value)})}/>
+            <label htmlFor='RoomId'>RoomId</label>
+            <input type='number' id='RoomId' onChange={(e)=>setData({...data,RoomId:parseInt(e.target.value)})}/>
           </div>
           <div className='form-control'>
             <label htmlFor='name'>Name</label>
             <input type='text' id='name' onChange={(e)=>setData({...data,Name:e.target.value})} />
           </div>
           <div className='form-control'>
-            <label htmlFor='namIsAvailablee'>Availablity</label>
-            <input type='text' id='IsAvailable' onChange={(e)=>setData({...data,IsAvailable:e.target.value})} />
+            <label htmlFor='IsAvailablee'>Availablity</label>
+            <input type='boolean' id='IsAvailable' 
+            onChange={(e)=>setData({...data,IsAvailable:true})}
+             />
           </div>
           <div className='form-control'>
             <label htmlFor='charge'>Charge</label>
-            <input type='number' id='charge' onChange={(e)=>setData({...data,charge:parseInt(e.target.value)})}/>
+            <input type='number' id='charge' onChange={(e)=>setData({...data,Charge:parseInt(e.target.value)})}/>
           </div>
-          <div className='form-control'>
+          {/* <div className='form-control'>
             <label htmlFor='WardId'>WardId</label>
             <input type='number' id='WardId' onChange={(e)=>setData({...data,WardId:parseInt(e.target.value)})}/>
-          </div>
+          </div> */}
+          <div>
+          <label>
+          WardId:  </label>
+          <select  onChange={(e)=>setData({...data,WardId:parseInt(e.target.value)})}>
+            <option value='1'>WardA</option>
+            <option value="2">WardB</option>
+            <option value="3">WardC</option>
+            <option value="4">WardD</option>
+            <option value="5">WardE</option>
+
+          </select>
+      
+        </div>
+
           <button onClick={handleAddRoom}>Add New Ward</button>
         </div>
       </form>

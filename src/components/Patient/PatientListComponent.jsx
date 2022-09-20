@@ -30,7 +30,17 @@ const PatientListComponent=()=>{
         return(
             <div>
               {showList && <div>  <button onClick={handleNewPatient}>Add New Patient</button>
-<table>
+<table border={1} cellPadding={2}>
+    <thead >
+        <tr>
+        {patientData[0] &&
+                            Object.keys(patientData[0]).map((header,index)=>(
+                               <th key={index}>{header}</th>
+                            ))
+                         }
+
+        </tr>
+    </thead>
     <tbody>
      <ListComponent data={patientData}></ListComponent>
     </tbody>
