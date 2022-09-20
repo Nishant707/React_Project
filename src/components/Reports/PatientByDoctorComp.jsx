@@ -44,7 +44,17 @@ const PatientByDoctorComp = () => {
           );
         })}
       </select>
-      <table>
+      <table border={1} cellPadding={5}>
+        <thead>
+          <tr>
+            <td>selectedDoctor</td>
+            <td>PatientId</td>
+            <td>FirstName</td>
+            <td>LastName</td>
+            <td>IsAdmitted</td>
+            <td>Gender</td>
+          </tr>
+        </thead>
         <tbody>
           {patientByDoctor.length === 0 ? (
             <div className="container">
@@ -52,13 +62,15 @@ const PatientByDoctorComp = () => {
             </div>
           ) : (
             patientByDoctor.map((e, index) => {
+              console.log(e.IsAdmitted,"hi");
               return (
                 <tr key={index}>
                   <td>{selectedDoctor}</td>
                   <td>{e.PatientId}</td>
                   <td>{e.FirstName}</td>
                   <td>{e.LastName}</td>
-                  <td>{e.IsAdmitted}</td>
+                  <td>{e.IsAdmitted.toString()}</td>
+            
                   <td>{e.Gender}</td>
                 </tr>
               );

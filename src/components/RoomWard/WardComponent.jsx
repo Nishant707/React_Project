@@ -3,7 +3,7 @@ import { useState } from "react";
 
 const WardComponent=()=>{
 
-    const [data,setData]=useState({'WardId':123,'Name':""});
+    const [data,setData]=useState({'WardId':null,'Name':""});
 
    
   async function handleAddWard(event){

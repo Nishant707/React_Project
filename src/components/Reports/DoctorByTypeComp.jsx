@@ -33,7 +33,23 @@ const DoctorByTypeComp = () => {
           );
         })}
       </select>
-      <table>
+      <table border={1} cellPadding={5}>
+        <thead>
+          <tr>
+            <td>
+DoctorId
+            </td>
+            <td>
+            Name
+            </td>
+            <td>
+            Email
+            </td>
+            <td>Specialization</td>
+                  <td>Fees</td>
+                  <td>Type</td>
+          </tr>
+        </thead>
         <tbody>
           {doctorByType.length === 0 ? (
             <div className="container">
@@ -46,7 +62,7 @@ const DoctorByTypeComp = () => {
                   <td>{e.DoctorId}</td>
                   <td>{e.Name}</td>
                   <td>{e.Email}</td>
-                  <td>{e.Typeialization}</td>
+                  <td>{e.Specialization}</td>
                   <td>{e.Fees}</td>
                   <td>{e.Type}</td>
                 </tr>
