@@ -106,22 +106,47 @@ const AddMedicineForm = (props) => {
   return (
     <>
       <p>Add Medicine</p>
-      <p>{props.patient.FirstName}</p>
       <div>
-        <p>MedicineList</p>
-        <select
-          className="form-control"
-          onChange={(evt) => selectkiya(evt.target.value)}
-        >
-          {MedicineList.map((e, idx) => {
-            // console.log(e);
-            return (
-              <option key={idx} value={e.MedicineId}>
-                {e.Name}
-              </option>
-            );
-          })}
-        </select>
+        <table border={1}>
+          <thead>
+            <tr>
+              <td>
+                Patient Id
+              </td>
+              <td>
+              <label>Name :</label>
+           </td>
+           <td>
+              <p>MedicineList</p>
+              </td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                {props.patient.PatientId}
+              </td>
+              <td>
+              <p>{props.patient.FirstName}</p>
+              </td>
+              <td>
+              <select
+                className="form-control"
+                onChange={(evt) => selectkiya(evt.target.value)}
+              >
+                {MedicineList.map((e, idx) => {
+                  // console.log(e);
+                  return (
+                    <option key={idx} value={e.MedicineId}>
+                      {e.Name}
+                    </option>
+                  );
+                })}
+              </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
         {SelecetedMedicineId != 0 && (
           <p>Id Of Selected Medicine: {SelecetedMedicineId}</p>
         )}

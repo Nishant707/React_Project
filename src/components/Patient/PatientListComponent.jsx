@@ -16,7 +16,7 @@ const PatientListComponent=()=>{
 
     useEffect(()=>{
         PatientList();}
-        ,[patientData]);
+        ,[]);
 
     async function  PatientList(){
     

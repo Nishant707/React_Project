@@ -91,10 +91,31 @@ const AddFoodForm = (props) => {
   return (
     <>
       <p>Add Food</p>
-      <p>{props.patient.FirstName}</p>
-      <div>
-        <p>FoodList</p>
-        <select
+      <table border={1}>
+<tr>
+  <td>
+    Patient Id
+  </td>
+  <td>
+  <label>Name</label>
+
+  </td>
+<td>
+<p>FoodList</p>
+
+</td>
+</tr>
+<tr>
+  <td>
+    {props.patient.PatientId}
+  </td>
+<td>
+<p>{props.patient.FirstName}</p>
+
+
+</td>
+<td>
+<select
           className="form-control"
           onChange={(evt) => selectkiya(evt.target.value)}
         >
@@ -107,6 +128,14 @@ const AddFoodForm = (props) => {
             );
           })}
         </select>
+</td>
+
+</tr>
+
+
+      </table>
+      <div>
+     
         {SelecetedFoodId != 0 && <p>Id Of Selected Food: {SelecetedFoodId}</p>}
         {SelecetedFoodId != 0 && (
           <p>Price Of Selected Food: {SelecetedFoodPrice}</p>

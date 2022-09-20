@@ -53,8 +53,16 @@ const IPDPatientsList = () => {
     <div>
       <p>PatientIPDS</p>
 
-      <table>
-        {/* <thead></thead> */}
+      <table border={1} cellPadding={10}>
+        <thead>
+          <td>Name</td>
+          <td>IsAdmitted</td>
+          <td>Doctor Id</td>
+          <td>Bill Id</td>
+          <td>RoomId</td>
+          <td>Total Bill</td>
+
+        </thead>
         <tbody>
           {IPDPatients === undefined ||
           IPDPatients === null ||

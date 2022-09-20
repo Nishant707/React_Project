@@ -21,7 +21,20 @@ const handleAdmit=(e)=>{
   
 }
 
+async function handleAPIPatient(){
+  const response2 = await fetch(
+    process.env.REACT_APP_API + "/Patient",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data)
+  
+    }
+  )
 
+}
 
 async function handleAddOPD(event){
 
@@ -31,7 +44,7 @@ async function handleAddOPD(event){
   // let uniqueValue=new Date().valueOf();
   // setData({...data,BillId:uniqueValue})
   setTimeout(console.log(data),5000);
-  // setModal(true);
+  setModal(true);
   const response1 = await fetch(
     process.env.REACT_APP_API + "/Bill",
     {
@@ -43,20 +56,7 @@ async function handleAddOPD(event){
   
     }
   )
-
-
-
-const response2 = await fetch(
-  process.env.REACT_APP_API + "/Patient",
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data)
-
-  }
-)
+  handleAPIPatient();
 
 }
 
@@ -80,17 +80,7 @@ async function handleAddIPD(event){
 
 
 
-const response2 = await fetch(
-  process.env.REACT_APP_API + "/Patient",
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(data)
-
-  }
-)
+  handleAPIPatient();
 // console.log(response);
 // props.handleNewDoc();
 
@@ -109,7 +99,7 @@ const handleIPD=(e)=>{
 } 
     return (
       <div>
-        {modal && <ModalComponent setModal={setModal} />}
+        {modal && <ModalComponent setModal={setModal} BillId={data.BillId} IPD={data.isAdmitted}/>}
 
         <form>
           <div className='control-group'>
@@ -160,7 +150,7 @@ const handleIPD=(e)=>{
           Age Type:  </label>
           <select  onChange={(e)=>setData({...data,AgeType:e.target.value})}>
             <option value='Major'>Major</option>
-            <option value="Minor">Minor</option>
+            <option value='Minor'>Minor</option>
             {/* <option value="103">103</option>
             <option value="111">111</option>
             <option value="1022">1022</option> */}

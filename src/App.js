@@ -4,6 +4,7 @@ import PatientListComponent from "./components/Patient/PatientListComponent";
 import ShowRoomWardComponent from "./components/RoomWard/ShowRoomWardComponent";
 import { useState } from "react";
 import IPDPatientsList from "./components/IPDPatientsList/IPDPatientsList";
+import Reports from "./components/Reports/Reports";
 
 function App() {
   const [shownStaff, setshownStaff] = useState(false);
@@ -55,6 +56,7 @@ function App() {
         {showWardRoom && <ShowRoomWardComponent />}
 
         {showIPDDetails && <IPDPatientsList />}
+        <Reports/>
       </div>
     </div>
   );
