@@ -26,7 +26,7 @@ const NurseComponent = (props) => {
 
 
     return (
-      <form>
+      <form class="row g-3 needs-validation" novalidate>
         <div className='control-group'>
           <div className='form-control'>
             <label htmlFor='name'>Nurse Id</label>

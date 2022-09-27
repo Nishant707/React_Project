@@ -52,13 +52,24 @@ setReport(c=>!c);
   }
 
   return (
-    <div className="app">
-      <button onClick={handleStaff}>Staff</button>
+    <div className="container">
+        <div className="row">
+        
+      <button  className="btn btn-success" onClick={handleStaff}>Staff</button>
+    
 
-      <button onClick={handlePatient}>Patient</button>
-      <button onClick={handleWardRoom}>Ward/Room</button>
-      <button onClick={handleDetails}>IPD Patient Details</button>
-      <button onClick={handleReport}>Reports</button>
+      <button className="btn btn-success"  onClick={handlePatient}>Patient</button>
+
+
+      <button className="btn btn-success"  onClick={handleWardRoom}>Ward/Room</button>
+   
+
+      <button className="btn btn-success"  onClick={handleDetails}>IPD Patient Details</button>
+
+
+      <button className="btn btn-success"  onClick={handleReport}>Reports</button>
+
+      </div>
 
       <div>
         {shownStaff && <StaffComponent />}

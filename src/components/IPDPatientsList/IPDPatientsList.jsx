@@ -50,18 +50,19 @@ const IPDPatientsList = () => {
   }, [IsDischarged]);
   // console.log(IPDPatients);
   return (
-    <div>
+    <div className="app">
       <p>PatientIPDS</p>
 
-      <table border={1} cellPadding={10}>
+      <table className="table table-hover table-dark" >
         <thead>
+          <tr>
           <td>Name</td>
           <td>IsAdmitted</td>
           <td>Doctor Id</td>
           <td>Bill Id</td>
           <td>RoomId</td>
           <td>Total Bill</td>
-
+          </tr>
         </thead>
         <tbody>
           {IPDPatients === undefined ||
@@ -82,7 +83,7 @@ const IPDPatientsList = () => {
                   <td>{e.RoomId}</td>
                   <td>{e.Total_bill}</td>
                   <td>
-                    <button
+                    <button className="btn btn-primary"
                       type="button"
                       onClick={() => {
                         SetIsAddingMedicine(true);
@@ -96,7 +97,7 @@ const IPDPatientsList = () => {
                     </button>
                   </td>
                   <td>
-                    <button
+                    <button className="btn btn-primary"
                       type="button"
                       onClick={() => {
                         SetIsAddingFood(true);
@@ -110,7 +111,7 @@ const IPDPatientsList = () => {
                     </button>
                   </td>
                   <td>
-                    <button
+                    <button className="btn btn-primary"
                       type="button"
                       onClick={() => {
                         SetIsDischarged(true);

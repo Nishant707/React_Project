@@ -107,7 +107,7 @@ const AddMedicineForm = (props) => {
     <>
       <p>Add Medicine</p>
       <div>
-        <table border={1}>
+        <table className="table table-hover table-dark" >
           <thead>
             <tr>
               <td>
@@ -164,7 +164,7 @@ const AddMedicineForm = (props) => {
           <p>TotalPrice: {Quantity * SelecetedMedicinePrice}</p>
         )}
 
-        {Quantity != 0 && <button onClick={submitMedicine}>Submit</button>}
+        {Quantity != 0 && <button className="btn btn-primary" onClick={submitMedicine}>Submit</button>}
         {message != "" && <p color="red">{message}</p>}
       </div>
     </>

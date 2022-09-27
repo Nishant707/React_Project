@@ -28,9 +28,10 @@ const PatientListComponent=()=>{
         }
 
         return(
-            <div>
+    <div className="app">
+            
               {showList && <div>  <button onClick={handleNewPatient}>Add New Patient</button>
-<table border={1} cellPadding={2}>
+<table className="table table-hover table-dark">
     <thead >
         <tr>
         {patientData[0] &&

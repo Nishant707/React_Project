@@ -91,7 +91,7 @@ const AddFoodForm = (props) => {
   return (
     <>
       <p>Add Food</p>
-      <table border={1}>
+      <table className="table table-hover table-dark" >
 <tr>
   <td>
     Patient Id
@@ -151,7 +151,7 @@ const AddFoodForm = (props) => {
           <p>TotalPrice: {Quantity * SelecetedFoodPrice}</p>
         )}
 
-        {Quantity != 0 && <button onClick={submitFood}>Submit</button>}
+        {Quantity != 0 && <button className="btn btn-primary" onClick={submitFood}>Submit</button>}
         {message != "" && <p color="red">{message}</p>}
       </div>
     </>

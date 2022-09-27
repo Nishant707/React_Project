@@ -33,7 +33,24 @@ const DoctorBySpecComp = () => {
           );
         })}
       </select>
-      <table>
+      <table className="table table-hover table-dark">
+        <thead>
+        <tr>
+            <td>
+DoctorId
+            </td>
+            <td>
+            Name
+            </td>
+            <td>
+            Email
+            </td>
+            <td>Specialization</td>
+                  <td>Fees</td>
+                  <td>Type</td>
+          </tr>
+
+        </thead>
         <tbody>
           {doctorBySpec.length === 0 ? (
             <div className="container">

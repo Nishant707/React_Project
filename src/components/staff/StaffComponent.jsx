@@ -3,6 +3,7 @@ import NurseComponent from "./NurseComponent";
 import WardBoyComponent from "./WardBoyComponent";
 import { useState } from "react";
 import ListComponent from "../ReusableComponent/ListComponent";
+// import '../node_modules/bootstrap/scss/forms/_form-control.scss';
 
 
 const StaffComponent=()=>{
@@ -93,24 +94,35 @@ const StaffComponent=()=>{
 
    return(
     <div className="app">
-      <button onClick={handleDoctorList}>
+      <div className="row">
+
+      <div className="col-sm">
+      <button className="btn btn-outline-success" onClick={handleDoctorList}>
 Doctor
       </button>
-      <button onClick={handleNurseList}>
+      </div>
+      <div className="col-sm">
+
+      <button className="btn btn-outline-success" onClick={handleNurseList}>
 Nurse
-      </button>
-      <button onClick={handleWardBoyList}>
+      </button >
+      </div>
+      <div className="col-sm">
+
+      <button className="btn btn-outline-success" onClick={handleWardBoyList}>
 WardBoy
+
       </button>
+      </div>
 
-
+</div>
 
      { isDoctorShown &&
      <div>
-      <button onClick={handleNewDoc}>Create
+      <button className="btn btn-primary" onClick={handleNewDoc}>Create
 
       </button>
-      {!isDoctorCreate && <table border={1} cellPadding={10}>
+      {!isDoctorCreate && <table className="table table-hover table-dark">
       <thead>
                     <tr>
                         {/* {docData[0] &&
@@ -136,10 +148,10 @@ WardBoy
 
       { isWardBoyShown &&
      <div>
-      <button onClick={handleNewWardBoy}>Create
+      <button className="btn btn-primary" onClick={handleNewWardBoy}>Create
 
       </button>
-      {!isWardBoyCreate && <table border={1} cellPadding={10}>
+      {!isWardBoyCreate && <table className="table table-hover table-dark">
       <thead>
                     <tr>
                         {/* {docData[0] &&
@@ -172,10 +184,10 @@ WardBoy
 
       { isNurseShown &&
      <div>
-      <button onClick={handleNewNurse}>Create
+      <button className="btn btn-primary" onClick={handleNewNurse}>Create
 
       </button>
-      {!isNurseCreate && <table border={1} cellPadding={10}>
+      {!isNurseCreate && <table className="table table-hover table-dark">
       <thead>
                     <tr>
                         {/* {docData[0] &&

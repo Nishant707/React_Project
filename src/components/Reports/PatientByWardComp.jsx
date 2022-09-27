@@ -58,7 +58,17 @@ const PatientByWardComp = () => {
           );
         })}
       </select>
-      <table>
+      <table className="table table-hover table-dark">
+      <thead>
+          <tr>
+            <td>selectedWard</td>
+            <td>PatientId</td>
+            <td>FirstName</td>
+            <td>LastName</td>
+            <td>IsAdmitted</td>
+            <td>Gender</td>
+          </tr>
+        </thead>
         <tbody>
           {patientByWard.length === 0 ? (
             <div className="container">

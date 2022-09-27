@@ -33,7 +33,7 @@ const DoctorByTypeComp = () => {
           );
         })}
       </select>
-      <table border={1} cellPadding={5}>
+      <table className="table table-hover table-dark">
         <thead>
           <tr>
             <td>
